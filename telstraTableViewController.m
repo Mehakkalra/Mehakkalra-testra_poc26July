@@ -15,12 +15,7 @@
 #import "Details.h"
 
 static NSString * const cellReuseIdentifier = @"cellReuseIdentifier";
-//CGFloat heightOfFetchedImage=0.0f;
-//CGFloat widthOfFetchedImage=0.0f;
-//CGRect rect;
-//CGRect rect1;
-//BOOL isTableViewScrolling = false;
-NSIndexPath *indexPath1;
+NSIndexPath *rowSelected;
 
 @interface telstraTableViewController ()<telstraTableViewCellRefersh>
 
@@ -137,7 +132,7 @@ NSIndexPath *indexPath1;
     // Configure the cell...
     telstraTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuseIdentifier forIndexPath:indexPath];
     cell.delegate = self;
-    indexPath1 = indexPath;
+    rowSelected = indexPath;
     
     Details *detailsObj = (Details *)[self.detailsArray objectAtIndex:indexPath.row];
     cell.details=detailsObj;
@@ -168,7 +163,7 @@ NSIndexPath *indexPath1;
 }
 
 -(void)refreshCell{
-    [self.tableView reloadRowsAtIndexPaths:@[indexPath1] withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView reloadRowsAtIndexPaths:@[rowSelected] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 

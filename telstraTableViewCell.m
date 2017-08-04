@@ -11,7 +11,6 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "UIView+WebCache.h"
 
-float const kCellPadding = 1.0;
 CGFloat heightOfFetchedImage=0.0f;
 CGFloat widthOfFetchedImage=0.0f;
 
